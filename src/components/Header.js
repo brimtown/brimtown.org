@@ -1,14 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const PageWrapper = styled.div`
-  padding: 3%;
-
-  @media (min-width: 768px) {
-    padding: 2rem 4rem;
-  }
+const HeaderWrapper = styled.div`
+  grid-area: head;
 `;
-const Heading = styled.h1`
+
+const HeaderText = styled.h1`
   font-family: Univers, Helvetica, sans-serif;
   font-size: 1.75rem;
   letter-spacing: 1px;
@@ -30,19 +27,10 @@ const Heading = styled.h1`
   }
 `;
 
-const Body = styled.p`
-  font-family: Helvetica, sans-serif;
-  font-size: 1.25rem;
-`;
-
-const NotFoundPage = () => (
-  <PageWrapper>
-    <Heading>Not Found</Heading>
-    <Body>The page you requested couldn't be found.</Body>
-    <Body>
-      <a href="/">Return home.</a>
-    </Body>
-  </PageWrapper>
+const Header = () => (
+  <HeaderWrapper>
+    <HeaderText>Tim Brown</HeaderText>
+  </HeaderWrapper>
 );
 
-export default NotFoundPage;
+export default Header;

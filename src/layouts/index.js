@@ -1,38 +1,33 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-
-import Header from '../components/header'
-import './index.css'
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
+import theme from '../theme';
 
 const Layout = ({ children, data }) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
-      ]}
-    />
-    <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '0px 1.0875rem 1.45rem',
-        paddingTop: 0,
-      }}
-    >
-      {children()}
+  <ThemeProvider theme={theme}>
+    <div>
+      <Helmet
+        title={data.site.siteMetadata.title}
+        meta={[
+          {
+            name: 'description',
+            content:
+              'Tim Brown is an experienced software engineer in New York City who builds for the web.',
+          },
+          { name: 'keywords', content: 'Tim Brown, software engineer' },
+        ]}
+      />
+      <div>{children()}</div>
     </div>
-  </div>
-)
+  </ThemeProvider>
+);
 
 Layout.propTypes = {
   children: PropTypes.func,
-}
+};
 
-export default Layout
+export default Layout;
 
 export const query = graphql`
   query SiteTitleQuery {
@@ -42,4 +37,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
