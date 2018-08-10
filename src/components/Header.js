@@ -8,7 +8,6 @@ const HeaderWrapper = styled.div`
 const HeaderText = styled.h1`
   font-family: Univers, Helvetica, sans-serif;
   font-size: 1.75rem;
-  letter-spacing: 1px;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;

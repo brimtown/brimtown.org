@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import theme from '../theme';
+import favicon from '../favicon.png';
 
 const Layout = ({ children, data }) => (
   <ThemeProvider theme={theme}>
@@ -17,6 +18,7 @@ const Layout = ({ children, data }) => (
           },
           { name: 'keywords', content: 'Tim Brown, software engineer' },
         ]}
+        link={[{ rel: 'shortcut icon', type: 'image/png', href: `${favicon}` }]}
       />
       <div>{children()}</div>
     </div>
