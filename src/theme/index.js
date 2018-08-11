@@ -1,20 +1,19 @@
 import { injectGlobal } from 'styled-components';
-import SectraWoff2 from '../assets/fonts/GT-Sectra-Fine-Regular.woff2';
-import SectraWoff from '../assets/fonts/GT-Sectra-Fine-Regular.woff';
-import UniversWoff2 from '../assets/fonts/Univers-Bold.woff2';
-import UniversWoff from '../assets/fonts/Univers-Bold.woff';
+import { Sectra, Univers } from './typography';
 
 injectGlobal([
   `
   @font-face {
       font-family: Sectra;
-      src:url("${SectraWoff2}") format("woff2"),
-          url("${SectraWoff}") format("woff");
+      font-display: block;
+      src:url("${Sectra.woff2}") format("woff2"),
+          url("${Sectra.woff}") format("woff");
     }
   @font-face {
       font-family: Univers;
-      src:url("${UniversWoff2}") format("woff2");
-          url("${UniversWoff}") format("woff");
+      font-display: block;
+      src:url("${Univers.woff2}") format("woff2");
+          url("${Univers.woff}") format("woff");
     }
   ::selection {
     background: #ffd58d;
