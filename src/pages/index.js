@@ -6,12 +6,12 @@ import SocialIcons from '../components/SocialIcons';
 import Ball from '../components/Ball';
 
 const FadeIn = keyframes`
-  0% {
+  from {
     opacity: 0;
     transform: translate3d(0px, 5px, 0px);
   }
 
-  100%: {
+  to {
     opacity: 1;
     transform: translate3d(0px, 0px, 0px);
   }
@@ -58,12 +58,13 @@ const HomepageWrapper = styled.div`
 `;
 
 const BodyText = styled.div`
+  opacity: 0;
   font-size: 1.8rem;
   font-family: Sectra, Georgia, serif;
   line-height: 2.15rem;
   grid-area: body;
   align-self: center;
-  animation: ${FadeIn} 800ms ease-in;
+  animation: ${FadeIn} ease-in 800ms both;
 
   @media (min-width: 480px) {
     font-size: 2rem;
