@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Layout from '../components/Layout';
 
 const PageWrapper = styled.div`
   padding: 3%;
@@ -36,13 +37,15 @@ const Body = styled.p`
 `;
 
 const NotFoundPage = () => (
-  <PageWrapper>
-    <Heading>Not Found</Heading>
-    <Body>The page you requested couldn't be found.</Body>
-    <Body>
-      <a href="/">Return home.</a>
-    </Body>
-  </PageWrapper>
+  <Layout>
+    <PageWrapper>
+      <Heading>Not Found</Heading>
+      <Body>The page you requested couldn't be found.</Body>
+      <Body>
+        <a href="/">Return home.</a>
+      </Body>
+    </PageWrapper>
+  </Layout>
 );
 
 export default NotFoundPage;

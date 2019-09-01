@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import homepage from '../assets/images/HomepageBackground.jpg';
 import SocialIcons from '../components/SocialIcons';
 import Ball from '../components/Ball';
+import Layout from '../components/Layout';
 
 const FadeIn = keyframes`
   from {
@@ -120,29 +121,31 @@ const BodyParagraph = styled.p`
 `;
 
 const IndexPage = () => (
-  <HomepageWrapper backgroundImage={homepage}>
-    <Ball top={100} left={-20} delay={2500} />
-    <Header />
-    <SocialIcons />
-    <BodyText>
-      <BodyParagraph>
-        Tim is an experienced software engineer in New&nbsp;York City who builds
-        for the web.
-      </BodyParagraph>
-      <BodyParagraph>
-        He is a Senior Software Engineer at{' '}
-        <HomepageLink href="https://www.harrys.com/" target="_">
-          Harry's
-        </HomepageLink>
-        .
-      </BodyParagraph>
-    </BodyText>
-    <Footer>
-      <EmailText href="mailto:brown.tim.lee@gmail.com">
-        brown.tim.lee@gmail.com
-      </EmailText>
-    </Footer>
-  </HomepageWrapper>
+  <Layout>
+    <HomepageWrapper backgroundImage={homepage}>
+      <Ball top={100} left={-20} delay={2500} />
+      <Header />
+      <SocialIcons />
+      <BodyText>
+        <BodyParagraph>
+          Tim is an experienced software engineer in New&nbsp;York City who
+          builds for the web.
+        </BodyParagraph>
+        <BodyParagraph>
+          He is a Senior Software Engineer at{' '}
+          <HomepageLink href="https://www.harrys.com/" target="_">
+            Harry's
+          </HomepageLink>
+          .
+        </BodyParagraph>
+      </BodyText>
+      <Footer>
+        <EmailText href="mailto:brown.tim.lee@gmail.com">
+          brown.tim.lee@gmail.com
+        </EmailText>
+      </Footer>
+    </HomepageWrapper>
+  </Layout>
 );
 
 export default IndexPage;

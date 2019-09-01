@@ -1,8 +1,7 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import { Sectra, Univers } from './typography';
 
-injectGlobal([
-  `
+export const GlobalStyle = createGlobalStyle`
   @font-face {
       font-family: Sectra;
       font-display: block;
@@ -41,8 +40,7 @@ injectGlobal([
       font-size: 100%;
     }
   }
-`,
-]);
+`;
 
 const theme = {
   colors: {
