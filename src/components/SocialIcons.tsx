@@ -45,13 +45,13 @@ interface Props {
   alt: string;
 }
 
-const SocialIcon = ({ path, source, alt }: Props) => (
+const SocialIcon: React.FC<Props> = ({ path, source, alt }) => (
   <Icon href={path} target="_">
     <IconImage src={source} alt={alt} />
   </Icon>
 );
 
-const SocialIcons = () => (
+const SocialIcons: React.FC = () => (
   <SocialIconsWrapper>
     <SocialIcon
       source={Github}

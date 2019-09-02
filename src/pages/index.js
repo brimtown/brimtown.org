@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import homepage from '../assets/images/HomepageBackground.jpg';
 import SocialIcons from '../components/SocialIcons.tsx';
 import Ball from '../components/Ball';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout.tsx';
 
 const FadeIn = keyframes`
   from {

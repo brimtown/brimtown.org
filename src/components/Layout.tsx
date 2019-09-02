@@ -6,7 +6,7 @@ import theme, { GlobalStyle } from '../theme';
 import { Sectra, Univers } from '../theme/typography';
 import favicon from '../favicon.png';
 
-const Layout = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -31,14 +31,14 @@ const Layout = ({ children }) => {
           href={`${Sectra.woff2}`}
           as="font"
           type="font/woff2"
-          crossOrigin
+          crossOrigin="anonymous"
         />
         <link
           rel="preload"
           href={`${Univers.woff2}`}
           as="font"
           type="font/woff2"
-          crossOrigin
+          crossOrigin="anonymous"
         />
         <link rel="shortcut icon" type="image/png" href={`${favicon}`} />
       </Helmet>
