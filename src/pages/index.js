@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Header from '../components/Header';
 import homepage from '../assets/images/HomepageBackground.jpg';
-import SocialIcons from '../components/SocialIcons';
+import SocialIcons from '../components/SocialIcons.tsx';
 import Ball from '../components/Ball';
 import Layout from '../components/Layout';
 

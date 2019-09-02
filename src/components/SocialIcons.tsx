@@ -39,7 +39,13 @@ const IconImage = styled.img`
   margin-bottom: 1.45rem;
 `;
 
-const SocialIcon = ({ path, source, alt }) => (
+interface Props {
+  path: string;
+  source: string;
+  alt: string;
+}
+
+const SocialIcon = ({ path, source, alt }: Props) => (
   <Icon href={path} target="_">
     <IconImage src={source} alt={alt} />
   </Icon>

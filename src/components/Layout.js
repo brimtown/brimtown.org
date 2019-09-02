@@ -1,6 +1,5 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import theme, { GlobalStyle } from '../theme';
@@ -51,10 +50,6 @@ const Layout = ({ children }) => {
       </ThemeProvider>
     </div>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.func,
 };
 
 export default Layout;

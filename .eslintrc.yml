@@ -1,4 +1,7 @@
-extends: [airbnb, prettier]
+parser: "@typescript-eslint/parser"
+parserOptions:
+  project: "./tsconfig.json"
+extends: [airbnb, prettier, prettier/@typescript-eslint, plugin:@typescript-eslint/recommended]
 plugins: [prettier]
 env:
   browser: true
@@ -8,7 +11,7 @@ globals:
   graphql: false
 rules:
   import/extensions: off
-  import/no-extraneous-dependencies: error,
+  import/no-extraneous-dependencies: error
   prettier/prettier: error
   react/destructuring-assignment: off
   react/jsx-filename-extension: off
