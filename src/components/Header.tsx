@@ -16,7 +16,7 @@ const HeaderText = styled.h1`
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: ${props => props.theme.black};
+  color: ${(props): string => props.theme.black};
   font-weight: bold;
   text-rendering: optimizeLegibility;
   line-height: 1.1;
@@ -26,7 +26,7 @@ const HeaderText = styled.h1`
   }
 `;
 
-const Header = () => (
+const Header: React.FC = () => (
   <HeaderWrapper>
     <HeaderText>Tim Brown</HeaderText>
   </HeaderWrapper>

@@ -4,11 +4,16 @@ import styled from 'styled-components';
 const BALL_SPEED = 5;
 const BALL_DIAMETER = 20;
 
-const BallWrapper = styled.div.attrs({
-  style: ({ top, left }) => ({
+interface WrapperProps {
+  top: number;
+  left: number;
+}
+
+const BallWrapper = styled.div.attrs<WrapperProps>({
+  style: ({ top, left }: Props) => ({
     transform: `translate3d(${left}px, ${top}px, 0px)`,
   }),
-})`
+})<WrapperProps>`
   background-color: black;
   border-radius: 50%;
   height: ${BALL_DIAMETER}px;
@@ -20,8 +25,22 @@ const BallWrapper = styled.div.attrs({
   will-change: transform;
 `;
 
-class Ball extends React.Component {
-  constructor(props) {
+interface Props {
+  top: number;
+  left: number;
+  delay: number;
+}
+
+interface State {
+  top: number;
+  left: number;
+  speed: number;
+  deltaX: number;
+  deltaY: number;
+}
+
+class Ball extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = {
       top: props.top,
@@ -34,12 +53,12 @@ class Ball extends React.Component {
     this.timer = this.timer.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     const { delay } = this.props;
     setTimeout(() => requestAnimationFrame(this.timer), delay);
   }
 
-  timer() {
+  timer(): void {
     this.setState(state => {
       let newDeltaX = state.deltaX;
       let newDeltaY = state.deltaY;
@@ -68,7 +87,7 @@ class Ball extends React.Component {
     requestAnimationFrame(this.timer);
   }
 
-  render() {
+  render(): JSX.Element {
     return <BallWrapper top={this.state.top} left={this.state.left} />;
   }
 }

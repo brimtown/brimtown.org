@@ -1,6 +1,7 @@
 parser: "@typescript-eslint/parser"
 parserOptions:
   project: "./tsconfig.json"
+  sourceType: module
 extends: [airbnb, prettier, prettier/@typescript-eslint, plugin:@typescript-eslint/recommended]
 plugins: [prettier]
 env:
@@ -21,3 +22,8 @@ rules:
   react/prop-types: off
   react/require-default-props: off
   react/no-unused-state: off
+settings:
+  "import/resolver":
+    node:
+      extensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".d.ts"]
+      paths: ["src/**/*"]

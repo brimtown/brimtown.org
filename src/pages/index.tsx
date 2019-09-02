@@ -2,9 +2,13 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Header from '../components/Header';
 import homepage from '../assets/images/HomepageBackground.jpg';
-import SocialIcons from '../components/SocialIcons.tsx';
+import SocialIcons from '../components/SocialIcons';
 import Ball from '../components/Ball';
-import Layout from '../components/Layout.tsx';
+import Layout from '../components/Layout';
+
+interface HomepageWrapperProps {
+  backgroundImage: string;
+}
 
 const FadeIn = keyframes`
   from {
@@ -18,7 +22,7 @@ const FadeIn = keyframes`
   }
 `;
 
-const HomepageWrapper = styled.div`
+const HomepageWrapper = styled.div<HomepageWrapperProps>`
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -120,7 +124,7 @@ const BodyParagraph = styled.p`
   margin-bottom: 2rem;
 `;
 
-const IndexPage = () => (
+const IndexPage: React.FC = () => (
   <Layout>
     <HomepageWrapper backgroundImage={homepage}>
       <Ball top={100} left={-20} delay={2500} />

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Layout from '../components/Layout.tsx';
+import Layout from '../components/Layout';
 
 const PageWrapper = styled.div`
   padding: 3%;
@@ -21,7 +21,7 @@ const Heading = styled.h1`
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: ${props => props.theme.black};
+  color: ${(props): string => props.theme.black};
   font-weight: bold;
   text-rendering: optimizeLegibility;
   line-height: 1.1;
