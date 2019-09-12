@@ -21,7 +21,7 @@ const Icon = styled.a`
     transform: rotate(-15deg);
   }
 
-  @media (min-width: 480px) {
+  ${(props): string => props.theme.mediaQueries.small} {
     width: 25px;
     height: 25px;
   }

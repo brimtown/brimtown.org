@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 const PageWrapper = styled.div`
   padding: 3%;
 
-  @media (min-width: 768px) {
+  ${(props): string => props.theme.mediaQueries.medium} {
     padding: 2rem 4rem;
   }
 `;
@@ -13,20 +13,14 @@ const Heading = styled.h1`
   font-family: Univers, Helvetica, sans-serif;
   font-size: 1.75rem;
   letter-spacing: 1px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin: 0 0 1.45rem 0;
+  padding: 0;
   color: ${(props): string => props.theme.black};
   font-weight: bold;
   text-rendering: optimizeLegibility;
   line-height: 1.1;
 
-  @media (min-width: 480px) {
+  ${(props): string => props.theme.mediaQueries.small} {
     font-size: 2.25rem;
   }
 `;
@@ -36,7 +30,7 @@ const Body = styled.p`
   font-size: 1.25rem;
 `;
 
-const NotFoundPage = () => (
+const NotFoundPage: React.FC = () => (
   <Layout>
     <PageWrapper>
       <Heading>Not Found</Heading>

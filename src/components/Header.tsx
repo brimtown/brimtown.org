@@ -6,23 +6,17 @@ const HeaderWrapper = styled.div`
 `;
 
 const HeaderText = styled.h1`
-  font-family: Univers, Helvetica, sans-serif;
+  font-family: ${(props): string => props.theme.fonts.univers};
   font-size: 1.75rem;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
-  color: ${(props): string => props.theme.black};
+  margin: 0 0 1.45rem 0;
+  padding: 0;
+  color: ${(props): string => props.theme.colors.black};
   font-weight: bold;
   text-rendering: optimizeLegibility;
   line-height: 1.1;
 
-  @media (min-width: 480px) {
-    font-size: 2.25rem;
+  ${(props): string => props.theme.mediaQueries.small} {
+    font-size: 2rem;
   }
 `;
 

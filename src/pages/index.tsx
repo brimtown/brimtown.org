@@ -26,7 +26,7 @@ const HomepageWrapper = styled.div<HomepageWrapperProps>`
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(${props => props.backgroundImage});
+  background-image: url(${(props): string => props.backgroundImage});
   display: grid;
   grid-gap: 10px;
   grid-template-areas:
@@ -41,7 +41,7 @@ const HomepageWrapper = styled.div<HomepageWrapperProps>`
   position: relative;
   width: 100vw;
 
-  @media (min-width: 768px) {
+  ${(props): string => props.theme.mediaQueries.medium} {
     background-position: right;
     background-size: auto 100vh;
     grid-template-areas:
@@ -53,7 +53,7 @@ const HomepageWrapper = styled.div<HomepageWrapperProps>`
     padding: 2rem 4rem;
   }
 
-  @media (min-width: 1024px) {
+  ${(props): string => props.theme.mediaQueries.large} {
     grid-template-areas:
       'head head icon'
       'body .    .   '
@@ -64,22 +64,22 @@ const HomepageWrapper = styled.div<HomepageWrapperProps>`
 
 const BodyText = styled.div`
   opacity: 0;
-  font-size: 1.8rem;
-  font-family: Sectra, Georgia, serif;
-  line-height: 2.15rem;
+  font-size: 1.75rem;
+  font-family: ${(props): string => props.theme.fonts.sectra};
+  line-height: 2.25rem;
   grid-area: body;
   align-self: center;
   animation: ${FadeIn} ease-in 800ms both;
 
-  @media (min-width: 480px) {
-    font-size: 2rem;
-    line-height: 2.5rem;
+  ${(props): string => props.theme.mediaQueries.small} {
+    font-size: 2.5rem;
+    line-height: 3.25rem;
   }
 `;
 
 const HomepageLink = styled.a`
-  color: ${props => props.theme.colors.cream};
-  font-family: Univers, Helvetica, sans-serif;
+  color: ${(props): string => props.theme.colors.cream};
+  font-family: ${(props): string => props.theme.fonts.univers};
   font-size: 1.625rem;
   text-transform: uppercase;
   font-weight: 200;
@@ -89,7 +89,7 @@ const HomepageLink = styled.a`
     filter: brightness(115%);
   }
 
-  @media (min-width: 480px) {
+  ${(props): string => props.theme.mediaQueries.small} {
     font-size: 1.75rem;
   }
 `;
@@ -100,9 +100,9 @@ const Footer = styled.div`
 `;
 
 const EmailText = styled.a`
-  color: ${props => props.theme.colors.black};
+  color: ${(props): string => props.theme.colors.black};
   text-decoration: none;
-  font-family: Univers, Helvetica, sans-serif;
+  font-family: ${(props): string => props.theme.fonts.univers};
   font-size: 1.2rem;
   height: 2em;
   display: flex;
@@ -115,7 +115,7 @@ const EmailText = styled.a`
     transform: translate3d(0px, -3px, 0px);
   }
 
-  @media (min-width: 480px) {
+  ${(props): string => props.theme.mediaQueries.small} {
     font-size: 1.625rem;
   }
 `;
