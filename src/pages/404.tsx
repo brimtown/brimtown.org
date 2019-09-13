@@ -9,15 +9,14 @@ const PageWrapper = styled.div`
     padding: 2rem 4rem;
   }
 `;
+
 const Heading = styled.h1`
-  font-family: Univers, Helvetica, sans-serif;
+  font-family: ${(props): string => props.theme.fonts.americaExtended};
   font-size: 1.75rem;
   letter-spacing: 1px;
   margin: 0 0 1.45rem 0;
   padding: 0;
   color: ${(props): string => props.theme.black};
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
   line-height: 1.1;
 
   ${(props): string => props.theme.mediaQueries.small} {

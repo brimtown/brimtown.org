@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import theme, { GlobalStyle } from '../theme';
-import { Sectra, Univers } from '../theme/typography';
+import { Sectra, AmericaExtended } from '../theme/typography';
 import favicon from '../favicon.png';
 
 const Layout: React.FC = ({ children }) => {
@@ -35,7 +35,7 @@ const Layout: React.FC = ({ children }) => {
         />
         <link
           rel="preload"
-          href={`${Univers.woff2}`}
+          href={`${AmericaExtended.woff2}`}
           as="font"
           type="font/woff2"
           crossOrigin="anonymous"

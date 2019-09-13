@@ -79,7 +79,7 @@ const BodyText = styled.div`
 
 const HomepageLink = styled.a`
   color: ${(props): string => props.theme.colors.cream};
-  font-family: ${(props): string => props.theme.fonts.univers};
+  font-family: ${(props): string => props.theme.fonts.americaExtended};
   font-size: 1.625rem;
   text-transform: uppercase;
   font-weight: 200;
@@ -102,7 +102,7 @@ const Footer = styled.div`
 const EmailText = styled.a`
   color: ${(props): string => props.theme.colors.black};
   text-decoration: none;
-  font-family: ${(props): string => props.theme.fonts.univers};
+  font-family: ${(props): string => props.theme.fonts.americaExtended};
   font-size: 1.2rem;
   height: 2em;
   display: flex;
