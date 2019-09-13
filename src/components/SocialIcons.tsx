@@ -5,7 +5,6 @@ import Twitter from '../assets/images/TwitterIcon.svg';
 import Linkedin from '../assets/images/LinkedinIcon.svg';
 
 const SocialIconsWrapper = styled.div`
-  grid-area: icon;
   display: flex;
   margin-top: 6px;
   justify-content: space-between;
