@@ -4,10 +4,15 @@ import { Sectra, Univers, America, AmericaExtended } from './typography';
 const breakpoints = ['480px', '768px', '1024px'];
 
 const theme = {
+  animations: {
+    fast: '200ms ease-out',
+  },
   colors: {
     black: '#260700',
+    burnt: '#802200',
     orange: '#ff5800',
     cream: '#ffd58d',
+    lightcream: '#fff4e9',
   },
   fonts: {
     sectra: 'Sectra, georgia, serif',
@@ -45,18 +50,23 @@ export const GlobalStyle = createGlobalStyle`
       font-display: block;
       src:url("${AmericaExtended.woff2}") format("woff2");
   }
-  ::selection {
-    background: ${theme.colors.cream};
-  }
-  body {
+  html, body, div, span,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, img, ol, ul, li, fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, section, summary {
     margin: 0;
-    background-color: ${theme.colors.orange};
-    color: ${theme.colors.black};
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
   }
   html {
     box-sizing: border-box;
     overflow-y: scroll;
-    font-size: 100%;
   }
   * {
     box-sizing: inherit;
@@ -66,6 +76,18 @@ export const GlobalStyle = createGlobalStyle`
   }
   *:after {
     box-sizing: inherit;
+  }
+  body {
+    background-color: ${theme.colors.orange};
+    color: ${theme.colors.black};
+    font-family: ${theme.fonts.america};
+    transition: background-color ${theme.animations.fast};
+  }
+  a {
+    text-decoration: none;
+  }
+  ::selection {
+    background: ${theme.colors.cream};
   }
 `;
 

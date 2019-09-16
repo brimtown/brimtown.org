@@ -1,9 +1,10 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import Header from '../components/Header';
 import homepage from '../assets/images/HomepageBackground.jpg';
 import Ball from '../components/Ball';
 import Layout from '../components/Layout';
+import Header from '../components/Header';
+import theme from '../theme';
 
 interface HomepageWrapperProps {
   backgroundImage: string;
@@ -28,9 +29,9 @@ const HomepageWrapper = styled.div<HomepageWrapperProps>`
   background-image: url(${(props): string => props.backgroundImage});
   min-height: 85vh;
   overflow: hidden;
-  padding: 4%;
   position: relative;
-  width: 100vw;
+  min-width: 100vw;
+  padding: 3%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -72,6 +73,7 @@ const HomepageLink = styled.a`
   text-transform: uppercase;
   font-weight: 200;
   transition: filter 300ms ease;
+  text-decoration: underline;
 
   :hover {
     filter: brightness(115%);
@@ -103,7 +105,6 @@ const EmailText = styled.a`
 
   ${(props): string => props.theme.mediaQueries.small} {
     font-size: 1.625rem;
-
   }
 `;
 
@@ -115,7 +116,7 @@ const IndexPage: React.FC = () => (
   <Layout>
     <HomepageWrapper backgroundImage={homepage}>
       <Ball top={100} left={-20} delay={2500} />
-      <Header />
+      <Header color={theme.colors.black} />
       <BodyText>
         <BodyParagraph>
           Tim is an experienced software engineer in New&nbsp;York City who

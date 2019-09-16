@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import theme from '../theme';
 
 const BALL_SPEED = 5;
 const BALL_DIAMETER = 20;
@@ -14,7 +15,7 @@ const BallWrapper = styled.div.attrs<WrapperProps>({
     transform: `translate3d(${left}px, ${top}px, 0px)`,
   }),
 })<WrapperProps>`
-  background-color: black;
+  background-color: ${theme.colors.burnt};
   border-radius: 50%;
   height: ${BALL_DIAMETER}px;
   width: ${BALL_DIAMETER}px;
@@ -22,6 +23,7 @@ const BallWrapper = styled.div.attrs<WrapperProps>({
   top: 0;
   left: 0;
   cursor: grab;
+  z-index: 1000;
   will-change: transform;
 `;
 
