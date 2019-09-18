@@ -18,7 +18,7 @@ const Layout: React.FC = ({ children }) => {
   `);
 
   return (
-    <div>
+    <>
       <Helmet>
         <title>{data.site.siteMetadata.title}</title>
         <meta
@@ -45,10 +45,10 @@ const Layout: React.FC = ({ children }) => {
       <ThemeProvider theme={theme}>
         <>
           <GlobalStyle />
-          <div>{children}</div>
+          {children}
         </>
       </ThemeProvider>
-    </div>
+    </>
   );
 };
 

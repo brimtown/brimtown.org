@@ -1,14 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/Layout';
-
-const PageWrapper = styled.div`
-  padding: 3%;
-
-  ${(props): string => props.theme.mediaQueries.medium} {
-    padding: 2rem 4rem;
-  }
-`;
+import Grid from '../components/Grid';
+import FullScreen from '../components/FullScreen';
+import Ball from '../components/Ball';
+import Header from '../components/Header';
 
 const Heading = styled.h1`
   font-family: ${(props): string => props.theme.fonts.americaExtended};
@@ -31,13 +27,19 @@ const Body = styled.p`
 
 const NotFoundPage: React.FC = () => (
   <Layout>
-    <PageWrapper>
-      <Heading>Not Found</Heading>
-      <Body>The page you requested couldn't be found.</Body>
-      <Body>
-        <a href="/">Return home.</a>
-      </Body>
-    </PageWrapper>
+    <FullScreen>
+      <Ball top={100} left={-20} delay={500} />
+      <Ball top={100} left={-20} delay={750} />
+      <Ball top={100} left={-20} delay={1000} />
+      <Grid>
+        <Header />
+        <Heading>Oops</Heading>
+        <Body>The page you requested couldn't be found.</Body>
+        <Body>
+          <a href="/">Return home.</a>
+        </Body>
+      </Grid>
+    </FullScreen>
   </Layout>
 );
 

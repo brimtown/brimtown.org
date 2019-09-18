@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import homepage from '../assets/images/HomepageBackground.jpg';
 import Ball from '../components/Ball';
 import Layout from '../components/Layout';
+import Grid from '../components/Grid';
+import FullScreen from '../components/FullScreen';
 
 interface HomepageWrapperProps {
   backgroundImage: string;
@@ -21,29 +23,24 @@ const FadeIn = keyframes`
   }
 `;
 
-const HomepageWrapper = styled.div<HomepageWrapperProps>`
+const HomepageWrapper = styled(FullScreen)<HomepageWrapperProps>`
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${(props): string => props.backgroundImage});
-  min-height: 85vh;
-  overflow: hidden;
-  padding: 4%;
   position: relative;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  ${(props): string => props.theme.mediaQueries.small} {
-    min-height: 100vh;
-  }
 
   ${(props): string => props.theme.mediaQueries.medium} {
     background-position: right;
     background-size: auto 100vh;
-    padding: 2rem 4rem;
   }
+`;
+
+const HomepageGrid = styled(Grid)`
+  min-height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const BodyText = styled.div`
@@ -103,7 +100,6 @@ const EmailText = styled.a`
 
   ${(props): string => props.theme.mediaQueries.small} {
     font-size: 1.625rem;
-
   }
 `;
 
@@ -115,25 +111,27 @@ const IndexPage: React.FC = () => (
   <Layout>
     <HomepageWrapper backgroundImage={homepage}>
       <Ball top={100} left={-20} delay={2500} />
-      <Header />
-      <BodyText>
-        <BodyParagraph>
-          Tim is an experienced software engineer in New&nbsp;York City who
-          builds for the web.
-        </BodyParagraph>
-        <BodyParagraph>
-          He is a Senior Software Engineer at{' '}
-          <HomepageLink href="https://www.harrys.com/" target="_">
-            Harry's
-          </HomepageLink>
-          .
-        </BodyParagraph>
-      </BodyText>
-      <Footer>
-        <EmailText href="mailto:brown.tim.lee@gmail.com">
-          brown.tim.lee@gmail.com
-        </EmailText>
-      </Footer>
+      <HomepageGrid>
+        <Header />
+        <BodyText>
+          <BodyParagraph>
+            Tim is an experienced software engineer in New&nbsp;York City who
+            builds for the web.
+          </BodyParagraph>
+          <BodyParagraph>
+            He is a Senior Software Engineer at{' '}
+            <HomepageLink href="https://www.harrys.com/" target="_">
+              Harry's
+            </HomepageLink>
+            .
+          </BodyParagraph>
+        </BodyText>
+        <Footer>
+          <EmailText href="mailto:brown.tim.lee@gmail.com">
+            brown.tim.lee@gmail.com
+          </EmailText>
+        </Footer>
+      </HomepageGrid>
     </HomepageWrapper>
   </Layout>
 );
