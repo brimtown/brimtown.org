@@ -5,6 +5,7 @@ import Grid from '../components/Grid';
 import FullScreen from '../components/FullScreen';
 import Ball from '../components/Ball';
 import Header from '../components/Header';
+import theme from '../theme';
 
 const Heading = styled.h1`
   font-family: ${(props): string => props.theme.fonts.americaExtended};
@@ -32,12 +33,9 @@ const NotFoundPage: React.FC = () => (
       <Ball top={100} left={-20} delay={750} />
       <Ball top={100} left={-20} delay={1000} />
       <Grid>
-        <Header />
+        <Header color={theme.colors.black} />
         <Heading>Oops</Heading>
         <Body>The page you requested couldn't be found.</Body>
-        <Body>
-          <a href="/">Return home.</a>
-        </Body>
       </Grid>
     </FullScreen>
   </Layout>

@@ -19,7 +19,7 @@ const Layout: React.FC = ({ children }) => {
 
   return (
     <>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
         <title>{data.site.siteMetadata.title}</title>
         <meta
           name="description"
