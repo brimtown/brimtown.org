@@ -6,7 +6,11 @@ import theme, { GlobalStyle } from '../theme';
 import { Sectra, AmericaExtended } from '../theme/typography';
 import favicon from '../favicon.png';
 
-const Layout: React.FC = ({ children }) => {
+interface Props {
+  lightBackground?: boolean;
+}
+
+const Layout: React.FC<Props> = ({ children, lightBackground }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -19,7 +23,7 @@ const Layout: React.FC = ({ children }) => {
 
   return (
     <>
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: 'en' }}>
         <title>{data.site.siteMetadata.title}</title>
         <meta
           name="description"
@@ -44,7 +48,7 @@ const Layout: React.FC = ({ children }) => {
       </Helmet>
       <ThemeProvider theme={theme}>
         <>
-          <GlobalStyle />
+          <GlobalStyle lightBackground={lightBackground} />
           {children}
         </>
       </ThemeProvider>

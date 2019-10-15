@@ -6,6 +6,7 @@ import Ball from '../components/Ball';
 import Layout from '../components/Layout';
 import Grid from '../components/Grid';
 import FullScreen from '../components/FullScreen';
+import theme from '../theme';
 
 interface HomepageWrapperProps {
   backgroundImage: string;
@@ -56,8 +57,10 @@ const BodyText = styled.div`
   }
 
   ${(props): string => props.theme.mediaQueries.medium} {
-    font-size: 2.5rem;
-    line-height: 3.25rem;
+    max-width: 85%;
+  }
+
+  ${(props): string => props.theme.mediaQueries.large} {
     max-width: 60%;
   }
 `;
@@ -65,17 +68,18 @@ const BodyText = styled.div`
 const HomepageLink = styled.a`
   color: ${(props): string => props.theme.colors.cream};
   font-family: ${(props): string => props.theme.fonts.americaExtended};
-  font-size: 1.625rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   font-weight: 200;
   transition: filter 300ms ease;
+  text-decoration: underline;
 
   :hover {
     filter: brightness(115%);
   }
 
   ${(props): string => props.theme.mediaQueries.small} {
-    font-size: 1.75rem;
+    font-size: 2rem;
   }
 `;
 
@@ -112,7 +116,7 @@ const IndexPage: React.FC = () => (
     <HomepageWrapper backgroundImage={homepage}>
       <Ball top={100} left={-20} delay={2500} />
       <HomepageGrid>
-        <Header />
+        <Header color={theme.colors.black} />
         <BodyText>
           <BodyParagraph>
             Tim is an experienced software engineer in New&nbsp;York City who
