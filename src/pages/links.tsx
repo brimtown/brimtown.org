@@ -5,6 +5,7 @@ import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Grid from '../components/Grid';
 import Video from '../components/Video';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const List = styled.ul`
   padding-left: 0.5rem;
@@ -21,7 +22,7 @@ const Item = styled.li`
   }
 `;
 
-const Link = styled.a`
+const Link = styled(OutboundLink)`
   color: ${(props): string => props.theme.colors.orange};
   transition: color ${(props): string => props.theme.animations.fast};
 
