@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const BALL_SPEED = 5;
+const BALL_SPEED = 6;
 const BALL_DIAMETER = 20;
 
 interface WrapperProps {

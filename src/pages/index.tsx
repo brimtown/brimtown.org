@@ -114,7 +114,7 @@ const BodyParagraph = styled.p`
 const IndexPage: React.FC = () => (
   <Layout>
     <HomepageWrapper backgroundImage={homepage}>
-      <Ball top={100} left={-20} delay={2500} />
+      <Ball top={100} left={-20} delay={2000} />
       <HomepageGrid>
         <Header color={theme.colors.black} />
         <BodyText>
