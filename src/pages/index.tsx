@@ -123,9 +123,9 @@ const IndexPage: React.FC = () => (
             builds for the web.
           </BodyParagraph>
           <BodyParagraph>
-            He is a Senior Software Engineer at{' '}
-            <HomepageLink href="https://www.harrys.com/" target="_">
-              Harry's
+            He is a Software Engineer at{' '}
+            <HomepageLink href="https://www.datadoghq.com/" target="_">
+              Datadog
             </HomepageLink>
             .
           </BodyParagraph>
