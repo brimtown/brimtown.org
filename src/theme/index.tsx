@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { Sectra, Univers, America, AmericaExtended } from './typography';
 
-const breakpoints = ['480px', '768px', '1024px'];
+const breakpoints = ['480px', '768px', '1024px', '2048px'];
 
 const theme = {
   animations: {
@@ -24,6 +24,7 @@ const theme = {
     small: `@media screen and (min-width: ${breakpoints[0]})`,
     medium: `@media screen and (min-width: ${breakpoints[1]})`,
     large: `@media screen and (min-width: ${breakpoints[2]})`,
+    xlarge: `@media screen and (min-width: ${breakpoints[3]})`,
   },
 };
 

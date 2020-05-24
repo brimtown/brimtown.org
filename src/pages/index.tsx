@@ -58,12 +58,15 @@ const BodyText = styled.div`
 
   ${(props): string => props.theme.mediaQueries.medium} {
     max-width: 85%;
-    font-size: calc(2vw + 1.5rem);
-    line-height: 1.3;
   }
 
   ${(props): string => props.theme.mediaQueries.large} {
     max-width: 60%;
+  }
+
+  ${(props): string => props.theme.mediaQueries.xlarge} {
+    font-size: calc(1vw + 2rem);
+    line-height: 1.3;
   }
 `;
 
@@ -83,8 +86,8 @@ const HomepageLink = styled.a`
     font-size: 2rem;
   }
 
-  ${(props): string => props.theme.mediaQueries.medium} {
-    font-size: calc(2vw + 1rem);
+  ${(props): string => props.theme.mediaQueries.xlarge} {
+    font-size: calc(1vw + 2rem);
   }
 `;
 
