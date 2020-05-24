@@ -82,7 +82,7 @@ export const GlobalStyle = createGlobalStyle<Props>`
     box-sizing: inherit;
   }
   body {
-    background-color: ${props =>
+    background-color: ${(props) =>
       props.lightBackground ? theme.colors.lightcream : theme.colors.orange};
     color: ${theme.colors.black};
     font-family: ${theme.fonts.america};

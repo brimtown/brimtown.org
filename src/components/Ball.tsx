@@ -9,11 +9,11 @@ interface WrapperProps {
   left: number;
 }
 
-const BallWrapper = styled.div.attrs<WrapperProps>({
-  style: ({ top, left }: Props) => ({
+const BallWrapper = styled.div.attrs<WrapperProps>(({ top, left }) => ({
+  style: {
     transform: `translate3d(${left}px, ${top}px, 0px)`,
-  }),
-})<WrapperProps>`
+  },
+}))<WrapperProps>`
   background-color: black;
   border-radius: 50%;
   height: ${BALL_DIAMETER}px;
@@ -59,7 +59,7 @@ class Ball extends React.Component<Props, State> {
   }
 
   timer(): void {
-    this.setState(state => {
+    this.setState((state) => {
       let newDeltaX = state.deltaX;
       let newDeltaY = state.deltaY;
       const clientRect = document.documentElement.getBoundingClientRect();

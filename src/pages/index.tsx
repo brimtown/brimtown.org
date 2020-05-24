@@ -58,6 +58,8 @@ const BodyText = styled.div`
 
   ${(props): string => props.theme.mediaQueries.medium} {
     max-width: 85%;
+    font-size: calc(2vw + 1.5rem);
+    line-height: 1.3;
   }
 
   ${(props): string => props.theme.mediaQueries.large} {
@@ -69,7 +71,6 @@ const HomepageLink = styled.a`
   color: ${(props): string => props.theme.colors.cream};
   font-family: ${(props): string => props.theme.fonts.americaExtended};
   font-size: 1.5rem;
-  text-transform: uppercase;
   font-weight: 200;
   transition: filter 300ms ease;
   text-decoration: underline;
@@ -80,6 +81,10 @@ const HomepageLink = styled.a`
 
   ${(props): string => props.theme.mediaQueries.small} {
     font-size: 2rem;
+  }
+
+  ${(props): string => props.theme.mediaQueries.medium} {
+    font-size: calc(2vw + 1rem);
   }
 `;
 

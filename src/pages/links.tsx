@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import Layout from '../components/Layout';
 import Header from '../components/Header';
 import Grid from '../components/Grid';
 import Video from '../components/Video';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
 
 const List = styled.ul`
   padding-left: 0.5rem;
